@@ -1,15 +1,16 @@
+require("dotenv").config(); // Load .env variables
+
 var bot = require("discord-music-bot");
 
-var serverName = "Your server name here";
-var textChannelName = "Your text channel name here (without #)";
-var voiceChannelName = "Your voice channel name here";
-var aliasesFile = "A file the bot will use to store your aliases";
-var botToken = "Your bot token here";
+var serverName = process.env.SERVER_NAME;
+var textChannelName = process.env.TEXT_CHANNEL_NAME;
+var voiceChannelName = process.env.VOICE_CHANNEL_NAME;
+var aliasesFile = process.env.ALIASES_FILE;
+var botToken = process.env.BOT_TOKEN;
 
-// Run the bot
 bot.run(serverName, textChannelName, voiceChannelName, aliasesFile, botToken);
 
-// Add minimal web server for Render health check
+// Express for Render port binding
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
