@@ -7,8 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "discord-music-bot": "^1.0.0",  // replace with actual version if needed
-    "express": "^4.18.2"
+    "discord-music-bot": "^1.0.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1"
   },
   "engines": {
     "node": ">=16"
